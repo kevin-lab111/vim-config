@@ -1,0 +1,41 @@
+filetype off
+    set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Plugins
+Plugin 'gmarik/vundle'
+
+" ============================================================================
+" Active plugins
+" You can disable or add new ones here:
+
+" Plugins from github repos:
+
+" Better file browser
+Plugin 'scrooloose/nerdtree'
+" Class/module browser
+Plugin 'majutsushi/tagbar'
+" Airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Code and files fuzzy finder
+Plugin 'kien/ctrlp.vim'
+
+
+
+" Plugin setting
+
+" Nerdtree setting
+"
+nmap <F3>  :NERDTreeToggle<CR>
+nmap ,t :NERDTreeFind<CR>
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Tagbar ----------------------------- 
+" toggle tagbar display
+map <F4> :TagbarToggle<CR>
+" autofocus on tagbar open
+let g:tagbar_autofocus = 1
+
