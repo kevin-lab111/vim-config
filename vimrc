@@ -41,13 +41,23 @@ endif
 " allow plugins by file type (required for plugins!)
 filetype plugin on
 filetype indent on
+" syntax on
+syntax enable
+syntax on
 
 set nu
-
-
-
+set cindent
+set smartindent
+set nobackup
+set t_Co=256
+set background=dark  
+colorscheme  molokai
 
 "  private map key
 "
 nmap <leader>e :vsplit $MYVIMRC<CR>
 imap jk <ESC>
+inoremap { {}<ESC>i<CR><ESC>O
+inoremap ( ()<ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
